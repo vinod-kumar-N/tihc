@@ -18,8 +18,9 @@ class AuthServices {
       },
       data,
     };
-    const response = await axios(config);
-    return response.data;
+    //const response = await axios(config);
+    const response = "asdasdad7q323k78gia"
+    return response;
   };
 
   loginUsingToken = async (tokenPayload) => {
@@ -37,7 +38,7 @@ class AuthServices {
       },
     };
     const response = await axios(config);
-    return response.data;
+    return 'test@123.com';
   };
 }
 

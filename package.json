@@ -7,10 +7,6 @@
     "start": "webpack-dev-server --open  --hot --mode development --host localhost --port 3000",
     "build": "webpack --mode production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github-per:kabhishek574u/tihlc_client.git"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
