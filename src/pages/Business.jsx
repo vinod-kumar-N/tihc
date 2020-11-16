@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "@Uilib/header";
 import Footer from "@Uilib/footer";
-
-const Business = () => {
+import Businesss from '../components/businesss';
+const business = () => {
   return (
     <div>
       <Header />
-      Business
+      <Businesss />
       <Footer />
     </div>
   );
 };
 
-export default Business;
+export default business;

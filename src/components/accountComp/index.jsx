@@ -26,7 +26,7 @@ const AccountComp = () => {
     // },
   ];
   return (
-    <div className="header-clearance account-comp-wrapper">
+    <div className="account-comp-wrapper">  {/*header-clearance class removed by vikki*/} 
       <VerticalTabs content={content} defaultActiveTab={2} />
     </div>
   );

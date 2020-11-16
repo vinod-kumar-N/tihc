@@ -20,7 +20,7 @@ class AuthServices {
     };
     //const response = await axios(config);
     const response = 'adfasdasdfadgadfa';
-    return response;
+    return response.data;
   };
 
   loginUsingToken = async (tokenPayload) => {

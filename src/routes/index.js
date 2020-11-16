@@ -6,6 +6,7 @@ import {
   Personal,
   GetInTouch,
   SignIn,
+  SignUp,
   AccountPage,
 } from '@Pages';
 
@@ -44,6 +45,12 @@ const Routes = [
     path: '/sign-in',
     exact: true,
     component: SignIn,
+    isPrivate: false,
+  },
+  {
+    path: '/sign-up',
+    exact: true,
+    component: SignUp,
     isPrivate: false,
   },
   {

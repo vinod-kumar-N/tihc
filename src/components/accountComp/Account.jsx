@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FormInput from '@Uilib/form/formInput';
 import Button from '@Uilib/button';
 import AccountActions from '@Actions/accountActions';
+import ChangePassword from '../changePassword';
 
 export default function Account() {
   const [isEditEnabled, setEditState] = useState(false);
@@ -121,7 +122,8 @@ export default function Account() {
         <div className="col-md-12">
           {isEditEnabled ? editibleHtml : readOnlyHtml}
         </div>
-      </div>
+      </div>      
+      <ChangePassword />
     </div>
   );
 }
