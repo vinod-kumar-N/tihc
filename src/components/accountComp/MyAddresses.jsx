@@ -72,7 +72,7 @@ export default function MyAddresses() {
         ),
       )}
       <div className="col-md-12">
-        <hr class="my-4" />
+        <hr className="my-4" />
         <Button onClick={handleEditAddress}>Add a new address</Button>
       </div>
     </Fragment>

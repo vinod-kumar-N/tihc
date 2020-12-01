@@ -4,6 +4,7 @@ export const authActionTypes = {
   'LOGIN_USING_AUTH_TOKEN': 'login using auth token',
   'SET_LOGGED_IN_USER': 'set logged in user',
   'LOGOUT_USER': 'logout user',
+  'REGISTER_USER': 'register user'
 };
 
 class UserActions {
@@ -37,6 +38,13 @@ class UserActions {
       type: authActionTypes.LOGOUT_USER,
     };
   };
+  registerUser = (payload) => {
+    return {
+      type: authActionTypes.REGISTER_USER,
+      data: payload,
+    };
+  };
+
 }
 
 export default new UserActions();

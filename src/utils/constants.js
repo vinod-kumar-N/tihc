@@ -13,12 +13,14 @@ const Constants = {
   UPDATE_USER_ACCOUNT_INFO: `${defaultDomain}Customer/Update`,
   GET_ADDRESS_BY_CUSTOMER: `${defaultDomain}Customer/GetAddressByCustomer?customerId=CUSTID`,
   ADD_OR_UPDATE_ADDRESS: `${defaultDomain}Customer/AddOrUpdateAddress`,
-  LETTER_STEP2: `${defaultDomain}Letters/Step2`
+  LETTER_STEP2: `${defaultDomain}Letters/Step2`,
+  CREATE_USER: `${defaultDomain}Customer/Create`,
+  MESSAGE_STEP1: `${defaultDomain}Message/Step1`,
 };
 
 export default Constants;
 
-export const AddressTypes ={
-  SENDER : 'SENDER',
-  RECEIVER : 'RECEIVER'
+export const AddressTypes = {
+  SENDER: 'SENDER',
+  RECEIVER: 'RECEIVER'
 }

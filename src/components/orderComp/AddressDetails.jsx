@@ -7,7 +7,8 @@ import { useDispatch, connect, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { AddressTypes } from '@Utils/constants';
 import PersonalService from '@Services/personalService';
-import FormInput from '@Uilib/form/formInput'
+import FormInput from '@Uilib/form/formInput';
+import NxtPrevBtn from './NxtPrevBtn';
 
 
 /**
@@ -74,8 +75,8 @@ const AddressDetails = ({ navigateTo }) => {
   let instancesCount = 0
 
   useEffect(() => {
-    if(localState.CustomerId === 0){
-      setLocalState((state) => ({ ...state, CustomerId}))
+    if (localState.CustomerId === 0) {
+      setLocalState((state) => ({ ...state, CustomerId }))
     }
     // * Load first Address dropdown for Sender Address component
     const { getUserAddresses } = AccountActions;
@@ -221,9 +222,15 @@ const AddressDetails = ({ navigateTo }) => {
 
         </div>
         <div className="col-md-12 yellow-saperator"></div>
-        <div className="col-md-12 next-prev-btn-container">
+        <div className="col-md-12 next-prev-btn-container d-none">
           <a className="btn btn-primary white-btn btn-prev" onClick={() => navigateTo(1)} >Back</a>
           <a className="btn btn-primary blue-btn btn-next" onClick={handleSubmit}>Add Ons</a>
+        </div>
+        <div className="col-12 border-top border-warning pt-3">
+          <NxtPrevBtn
+            previous="Back"
+            next="Add Ons"
+          />
         </div>
       </div>
     </div>

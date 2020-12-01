@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-import SignUpComp from '@Components/signupComp';
+import SigninComp from '@Components/signinComp';
 
 const SignIn = () => {
   return (
     <Fragment>
-      <SignUpComp />
+      <SigninComp />
     </Fragment>
   );
 };

@@ -5,7 +5,7 @@ const formInputType = (props) =>{
     return(
         <div className="form-input-types">
             <input type={props.type} name={props.name} required/> 
-            <label for={props.name} className="label-name">
+            <label htmlFor={props.name} className="label-name">
                 <span className="content-name">{props.label}</span>
             </label>          
         </div>

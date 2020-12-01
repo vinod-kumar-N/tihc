@@ -17,6 +17,25 @@ function* _getAuthToken(action) {
   }
 }
 
+function* _registerUser(action) {
+  try {
+    const payload = action.data;
+    console.log("Action Data: ", payload);
+    const userInfo = yield (AuthServices.registerUser(payload));
+    console.log("Success: ",userInfo);
+    const abc = action.data;
+    const { Email: email } = abc;
+    const tokenObj = yield AuthServices.getAuthTokanReg(abc);
+    const tokenPayload = { email, tokenObj };
+    yield put(UserActions.setAuthTokenToLocalStorage(tokenPayload));
+    const userObj = yield AuthServices.loginUsingToken(tokenPayload);
+    yield put(UserActions.setLoggedInUser(userObj));
+    //yield put(UserActions.loginUsingAuthToken());
+  } catch (error) {
+    yield console.log('Could not register user!', error);
+  }
+}
+
 function* getAuthToken() {
   yield takeLatest(authActionTypes.GET_AUTH_TOKEN, withLoader(_getAuthToken));
 }
@@ -38,6 +57,13 @@ function* loginUsingToken() {
   );
 }
 
+function* registerUser() {
+  yield takeLatest(
+    authActionTypes.REGISTER_USER,
+    withLoader(_registerUser),
+  );
+}
+
 export default function* AuthSaga() {
-  yield all([getAuthToken(), loginUsingToken()]);
+  yield all([getAuthToken(), loginUsingToken(), registerUser()]);
 }

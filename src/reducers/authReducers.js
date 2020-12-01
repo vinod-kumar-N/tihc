@@ -14,6 +14,14 @@ const AuthReducer = (state = {}, action) => {
         userInfo: undefined,
         isAuthenticated: false,
       };
+    case authActionTypes.REGISTER_USER:
+      console.log("inside authReducer");
+      const { data: newUserInfo } = action;
+      return {
+        ...state,
+        newUserInfo,
+        isAuthenticated: true,
+      };
     default:
       return state;
   }

@@ -8,6 +8,7 @@ const Personal = lazy(() => import('./Personal'));
 const SignIn = lazy(() => import('./SignIn'));
 const GetInTouch = lazy(() => import('./GetInTouch'));
 const AccountPage = lazy(() => import('./AccountPage'));
+const SignUp = lazy(() => import('./SignUp'));
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   SignIn,
   GetInTouch,
   AccountPage,
+  SignUp
 };

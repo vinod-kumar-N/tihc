@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
-// import LetterMessage from "./LetterMessage";
+import LetterMessage from "./LetterMessage";
 import AddressDetails from './AddressDetails';
 import UnderConstruction from './UnderConstruction';
-// import AdOn from './AddOns';
-// import Confirmation from './Confirmation';
+import AdOn from './AddOns';
+import Confirmation from './Confirmation';
 // import { makeStyles } from '@material-ui/core/styles';
 // import AppBar from '@material-ui/core/AppBar';
 // import Tab from '@material-ui/core/Tab';
@@ -12,12 +12,12 @@ import UnderConstruction from './UnderConstruction';
 // import TabPanel from '@material-ui/lab/TabPanel';
 
 const OrderComp = () => {
-  const [tabValue, setTabValue] = useState(2);
+  const [tabValue, setTabValue] = useState(4);
   const availableTabs = [
     {
       tabIndex: 1,
       label: 'Your Message',
-      component: 'UnderConstruction',
+      component: 'LetterMessage',
       // body: <UnderConstruction name={'Your Message'} />
     },
     {
@@ -29,13 +29,13 @@ const OrderComp = () => {
     {
       tabIndex: 3,
       label: 'Add ons',
-      component: 'UnderConstruction',
+      component: 'AddOns',
       // body: <UnderConstruction name={'Add ons'} />
     },
     {
       tabIndex: 4,
       label: 'Confirmation',
-      component: 'UnderConstruction',
+      component: 'Confirmation',
       // body: <UnderConstruction name={'Confirmation'} />
     },
   ]
@@ -44,6 +44,12 @@ const OrderComp = () => {
     switch (item.component) {
       case 'AddressDetails':
         return AddressDetails;
+      case 'LetterMessage':
+        return LetterMessage;
+      case 'AddOns':
+        return AdOn;
+        case 'Confirmation':
+          return Confirmation;
       case 'UnderConstruction':
         return UnderConstruction;
       default:
