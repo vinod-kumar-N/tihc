@@ -24,13 +24,12 @@ const rightSideDesign = () => {
         { value: 'New Zealand', label: 'New Zealand' },
         { value: 'Other', label: 'Other' }
     ];
-    const defaultOption = options[0];
     const [userState, setState] = useState({
-        FirstName: 'testinglasttime007',
-        LastName: 'adads',
-        Mobile: '9230110011',
-        Email: 'testinglasttime007@gmail.com',
-        Password: '13123123',
+        name: '',
+        email: '',
+        number: '',
+        password: '123456',
+        lastname: 'default',
         count: 0,
         isInputInvalid: false,
     });
@@ -43,19 +42,19 @@ const rightSideDesign = () => {
             count: state.count + 1,
         }));
     };
-    const { FirstName, LastName, Mobile, Email, Password, isInputInvalid } = userState;
+    const { name, email, number, password, lastname, isInputInvalid } = userState;
     const handleSubmit = () => {
-        if (FirstName.length > 2 && Email.length > 3) {
+        if (name.length > 2 && email.length > 3) {
             setState((state) => ({
                 ...state,
                 isInputInvalid: false,
             }));
             const payload = {
-                FirstName,
-                LastName,
-                Mobile,
-                Email,
-                Password
+                name,
+                email,
+                number,
+                password,
+                lastname
             };
             const { registerUser } = AuthActions;
             console.log("handle submitted");
@@ -69,43 +68,44 @@ const rightSideDesign = () => {
         }
     };
     const isAuthenticated = useSelector(
-      ({ AuthReducers }) => AuthReducers.isAuthenticated,
+        ({ AuthReducers }) => AuthReducers.isAuthenticated,
     );
     const toAccountPage = <Redirect to="/account-page" />;
+    const defaultOption = options[0];
     return isAuthenticated ? (
-      toAccountPage
+        toAccountPage
     ) : (
-        <Fragment>
-        <div className="row no-gutters p-3 RightSideDesign">
-            <div className="col-12">
-                <h1>Create my Account</h1>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-            </div>
-            <div className="col-12">
-                {inputReg.map(items => {
-                    return (
-                        <FormInput
-                            key={items.id}
-                            type={items.type}
-                            label={items.label}
-                            placeholder={items.Placeholder}
-                            name={items.name}
-                            onChange={handleChange}
-                        />)
-                })}
-            </div>
-            <div className="col-12 mt-3">
-                <Dropdown options={options} value={defaultOption} placeholder="Select/Seleccione" />
-            </div>
-            <div className="col-12 mt-3">
-                <button onClick={handleSubmit} className="Reg-btn">Register</button>
-            </div>
-            <div className="col-12 text-center mt-2">
-                <p>By signing Up, I agree to <a href="#">terms & conditions</a>& <a href="#">Privacy Policy</a></p>
-            </div>
-        </div>
-      </Fragment>
-    )
+            <Fragment>
+                <div className="row no-gutters p-3 RightSideDesign">
+                    <div className="col-12">
+                        <h1>Create my Account</h1>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                    </div>
+                    <div className="col-12">
+                        {inputReg.map(items => {
+                            return (
+                                <FormInput
+                                    key={items.id}
+                                    type={items.type}
+                                    label={items.label}
+                                    placeholder={items.Placeholder}
+                                    name={items.name}
+                                    onChange={handleChange}
+                                />)
+                        })}
+                    </div>
+                    <div className="col-12 mt-3">
+                        <Dropdown options={options} value={defaultOption} placeholder="Select/Seleccione" />
+                    </div>
+                    <div className="col-12 mt-3">
+                        <button onClick={handleSubmit} className="Reg-btn">Register</button>
+                    </div>
+                    <div className="col-12 text-center mt-2">
+                        <p>By signing Up, I agree to <a href="#">terms & conditions</a>& <a href="#">Privacy Policy</a></p>
+                    </div>
+                </div>
+            </Fragment>
+        )
 }
 
 export default rightSideDesign;

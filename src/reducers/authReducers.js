@@ -2,6 +2,7 @@ import { authActionTypes } from '@Actions/authActions';
 const AuthReducer = (state = {}, action) => {
   switch (action.type) {
     case authActionTypes.SET_LOGGED_IN_USER:
+      console.log(action.data);
       const { data: userInfo } = action;
       return {
         ...state,
@@ -16,6 +17,7 @@ const AuthReducer = (state = {}, action) => {
       };
     case authActionTypes.REGISTER_USER:
       console.log("inside authReducer");
+      console.log(action);
       const { data: newUserInfo } = action;
       return {
         ...state,

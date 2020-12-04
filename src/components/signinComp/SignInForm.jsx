@@ -67,7 +67,7 @@ const SignInForm = () => {
       <Fragment>
         <div className="container">
           <div className="row no-gutters justify-content-center">
-            <div className="col-4">
+            <div className="col-12 col-md-4">
               <div className="container SignIn">
                 <div className="row no-gutters">
                   <div className="col-12">
@@ -105,13 +105,13 @@ const SignInForm = () => {
                 </div>
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-md-4 bg-overlay d-none d-md-block">
               <RightComp
                 heading="Don't have an account?"
                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
                 button="Create my account"
                 class="SignIn-Container"
-                mainclass="row no-gutters bg-overlay RightDesign" />
+                mainclass="row no-gutters RightDesign" />
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ export default function MyAddresses() {
     ({ AuthReducers }) => AuthReducers.userInfo,
   );
 
+
   const { userAddresses } = useSelector(
     ({ AccountReducers }) => AccountReducers,
   );
@@ -46,30 +47,30 @@ export default function MyAddresses() {
           PostalCodeLong,
           StateLong,
         }) => (
-          <div className="col-md-4" key={AddressId}>
-            <Card className="address-card">
-              <Card.Body>
-                <Card.Title>{NickName}</Card.Title>
-                <Card.Text>{`${AddressLine1}, ${AddressLine2}`}</Card.Text>
-                <Card.Text>{`${CityLong}, ${PostalCodeLong}, ${StateLong}`}</Card.Text>
-              </Card.Body>
-              <Card.Footer className="text-muted">
-                <Button
-                  onClick={() => handleEditAddress(AddressId)}
-                  variant="outline-primary"
-                >
-                  Edit
+            <div className="col-md-4" key={AddressId}>
+              <Card className="address-card">
+                <Card.Body>
+                  <Card.Title>{NickName}</Card.Title>
+                  <Card.Text>{`${AddressLine1}, ${AddressLine2}`}</Card.Text>
+                  <Card.Text>{`${CityLong}, ${PostalCodeLong}, ${StateLong}`}</Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">
+                  <Button
+                    onClick={() => handleEditAddress(AddressId)}
+                    variant="outline-primary"
+                  >
+                    Edit
                 </Button> {' '}
-                <Button
-                  onClick={() => handleDeleteAddress(AddressId)}
-                  variant="outline-danger"
-                >
-                  Delete
+                  <Button
+                    onClick={() => handleDeleteAddress(AddressId)}
+                    variant="outline-danger"
+                  >
+                    Delete
                 </Button>
-              </Card.Footer>
-            </Card>
-          </div>
-        ),
+                </Card.Footer>
+              </Card>
+            </div>
+          ),
       )}
       <div className="col-md-12">
         <hr className="my-4" />
@@ -77,21 +78,21 @@ export default function MyAddresses() {
       </div>
     </Fragment>
   ) : (
-    <div className="alert alert-primary col-md-12">
-      No addresses found.{' '}
-      <a onClick={handleEditAddress} className="alert-link">
-        Click here, to add a address
+      <div className="alert alert-primary col-md-12">
+        No addresses found.{' '}
+        <a onClick={handleEditAddress} className="alert-link">
+          Click here, to add a address
       </a>
-    </div>
-  );
+      </div>
+    );
   const addEditAddressHtml = selectedAddressId ? (
     <AddEditAddress
       selectedAddressId={selectedAddressId}
       changeEditableState={changeEditableState}
     />
   ) : (
-    <AddEditAddress changeEditableState={changeEditableState} />
-  );
+      <AddEditAddress changeEditableState={changeEditableState} />
+    );
   return (
     <div className="container">
       <div className="row">

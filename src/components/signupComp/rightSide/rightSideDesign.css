@@ -32,3 +32,9 @@
     border: none;
     border-bottom: 1px solid #ddd;
 }
+
+@media (max-width: 575.98px) { 
+    .RightSideDesign{
+        width: 100%;
+    }
+}

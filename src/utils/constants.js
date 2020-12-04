@@ -15,7 +15,6 @@ const Constants = {
   ADD_OR_UPDATE_ADDRESS: `${defaultDomain}Customer/AddOrUpdateAddress`,
   LETTER_STEP2: `${defaultDomain}Letters/Step2`,
   CREATE_USER: `${defaultDomain}Customer/Create`,
-  MESSAGE_STEP1: `${defaultDomain}Message/Step1`,
 };
 
 export default Constants;

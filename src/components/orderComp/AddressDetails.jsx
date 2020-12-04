@@ -80,9 +80,7 @@ const AddressDetails = ({ navigateTo }) => {
     }
     // * Load first Address dropdown for Sender Address component
     const { getUserAddresses } = AccountActions;
-    if (userAddresses == {} || userAddresses.length === 0) {
-      dispatch(getUserAddresses(CustomerId));
-    }
+    dispatch(getUserAddresses(CustomerId));
     /** Load Country dropdown data */
     const { getCountryList } = PersonalActions;
     if (countries.length === 0)
